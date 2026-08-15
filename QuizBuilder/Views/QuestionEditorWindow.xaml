@@ -1,0 +1,130 @@
+﻿<Window x:Class="QuizBuilder.Views.QuestionEditorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Question Editor"
+        Height="550"
+        Width="500"
+        WindowStartupLocation="CenterOwner"
+        Background="#F4F7FC">
+
+    <Window.Resources>
+
+        <!-- Labels -->
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Margin" Value="0,8,0,4"/>
+            <Setter Property="Foreground" Value="#2C3E50"/>
+        </Style>
+
+        <!-- TextBoxes -->
+        <Style TargetType="TextBox">
+            <Setter Property="Height" Value="32"/>
+            <Setter Property="Padding" Value="8,4"/>
+            <Setter Property="Margin" Value="0,0,0,8"/>
+            <Setter Property="BorderBrush" Value="#4A90E2"/>
+            <Setter Property="BorderThickness" Value="1.5"/>
+            <Setter Property="Background" Value="White"/>
+        </Style>
+
+        <!-- ComboBox -->
+        <Style TargetType="ComboBox">
+            <Setter Property="Height" Value="32"/>
+            <Setter Property="Margin" Value="0,0,0,8"/>
+            <Setter Property="BorderBrush" Value="#4A90E2"/>
+            <Setter Property="BorderThickness" Value="1.5"/>
+        </Style>
+
+        <!-- Save Button -->
+        <Style x:Key="SaveButtonStyle" TargetType="Button">
+            <Setter Property="Width" Value="90"/>
+            <Setter Property="Height" Value="35"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background" Value="#2196F3"/>
+            <Setter Property="BorderBrush" Value="#2196F3"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Cursor" Value="Hand"/>
+        </Style>
+
+        <!-- Cancel Button -->
+        <Style x:Key="CancelButtonStyle" TargetType="Button">
+            <Setter Property="Width" Value="90"/>
+            <Setter Property="Height" Value="35"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background" Value="#E74C3C"/>
+            <Setter Property="BorderBrush" Value="#E74C3C"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Cursor" Value="Hand"/>
+        </Style>
+
+    </Window.Resources>
+
+    <Border Margin="15"
+            Padding="20"
+            Background="White"
+            CornerRadius="10"
+            BorderBrush="#D6E4F0"
+            BorderThickness="1">
+
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+
+            <StackPanel>
+
+                <TextBlock Text="Question Text"/>
+                <TextBox x:Name="QuestionTextBox"/>
+
+                <TextBlock Text="Topic"/>
+                <TextBox x:Name="TopicBox"/>
+
+                <TextBlock Text="Difficulty"/>
+                <ComboBox x:Name="DifficultyBox">
+                    <ComboBoxItem Content="Easy"/>
+                    <ComboBoxItem Content="Medium"/>
+                    <ComboBoxItem Content="Hard"/>
+                </ComboBox>
+
+                <TextBlock Text="Option 1"/>
+                <TextBox x:Name="Option1Box"/>
+
+                <TextBlock Text="Option 2"/>
+                <TextBox x:Name="Option2Box"/>
+
+                <TextBlock Text="Option 3"/>
+                <TextBox x:Name="Option3Box"/>
+
+                <TextBlock Text="Option 4"/>
+                <TextBox x:Name="Option4Box"/>
+
+                <TextBlock Text="Correct Option (1-4)"/>
+                <TextBox x:Name="CorrectIndexBox"/>
+
+                <!-- Inline Validation Message -->
+                <TextBlock x:Name="ErrorText"
+                           Foreground="Red"
+                           FontWeight="Bold"
+                           TextWrapping="Wrap"
+                           Margin="0,5,0,10"/>
+
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Right"
+                            Margin="0,15,0,0">
+
+                    <Button Content="💾 Save"
+                            Style="{StaticResource SaveButtonStyle}"
+                            Click="SaveButton_Click"/>
+
+                    <Button Content="❌ Cancel"
+                            Style="{StaticResource CancelButtonStyle}"
+                            Click="CancelButton_Click"/>
+
+                </StackPanel>
+
+            </StackPanel>
+
+        </ScrollViewer>
+
+    </Border>
+
+</Window>
