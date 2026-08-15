@@ -152,3 +152,29 @@ Possible future improvements include:
 **Completed academic project**
 
 Developed as an Advanced Programming project to demonstrate practical application of C#, WPF, OOP, CRUD, LINQ, XML serialization, asynchronous programming, and other software development concepts.
+
+## 📸 Screenshots
+
+### Home Screen
+
+The main screen provides access to question management and quiz functionality.
+
+![Quiz Builder Home Screen](screenshots/home%20screen.PNG)
+
+### Question Manager
+
+The Question Manager allows users to search and filter questions by topic, difficulty, and keyword, as well as add, edit, delete, and save questions.
+
+![Question Manager](screenshots/question%20manager.PNG)
+
+### Take Quiz
+
+Students can attempt multiple-choice questions and navigate through the quiz.
+
+![Take Quiz](screenshots/quiz%20window.PNG)
+
+### Quiz Results
+
+After completing a quiz, the application displays the score, percentage, selected answers, correct answers, and provides an option to export results to CSV.
+
+![Quiz Results](screenshots/result%20window.PNG)
